@@ -1,19 +1,9 @@
 <script setup>
-import { onMounted, ref } from "vue";
-//加载api/news
-// import { reactive, toRefs } from 'vue';
-import { getNewsList } from "@/api/news";
-const newList = ref([]);
-// fetch news list on component mount
-onMounted(async () => {
-  try {
-    const response = await getNewsList();
-    newList.value = response.data;
-    console.log(newList.value);
-  } catch (error) {
-    console.error(error);
-  }
-});
+import { onMounted } from "vue";
+//加载api
+import useNewsList from "@/api/useNewsList";
+
+const { newList } = useNewsList();
 
 import BaseLayout from "../../components/BaseLayout.vue";
 import View from "../../components/View.vue";

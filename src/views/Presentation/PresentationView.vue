@@ -5,7 +5,7 @@ import { onMounted, onUnmounted } from "vue";
 import NavbarDefault from "../..//examples/navbars/NavbarDefault.vue";
 import DefaultFooter from "../../examples/footers/FooterDefault.vue";
 import Header from "../../examples/Header.vue";
-import FilledInfoCard from "../../examples/cards/infoCards/FilledInfoCard.vue";
+import JobCard from "./Components/JobCard.vue";
 
 //Vue Material Kit 2 components
 import MaterialSocialButton from "@/components/MaterialSocialButton.vue";
@@ -83,7 +83,7 @@ onUnmounted(() => {
     <div class="container">
       <div class="row">
         <div class="col-lg-4">
-          <FilledInfoCard
+          <JobCard
             class="p-4"
             :color="{ text: 'white', background: 'bg-gradient-info' }"
             :icon="{ component: 'work', color: 'white' }"
@@ -91,12 +91,12 @@ onUnmounted(() => {
             description="岗位要求"
             :action="{
               route: '/',
-              label: { text: '查看', color: 'white' }
+              label: { text: '查看', color: 'white' },
             }"
           />
         </div>
         <div class="col-lg-4">
-          <FilledInfoCard
+          <JobCard
             class="px-lg-1 mt-lg-0 mt-4 p-4"
             height="h-100"
             :icon="{ component: 'work', color: 'info' }"
@@ -109,7 +109,7 @@ onUnmounted(() => {
           />
         </div>
         <div class="col-lg-4">
-          <FilledInfoCard
+          <JobCard
             class="px-lg-1 mt-lg-0 mt-4 p-4"
             height="h-100"
             :icon="{ component: 'work', color: 'info' }"

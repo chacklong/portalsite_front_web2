@@ -3,7 +3,7 @@ import ExampleCard from "../Components/ExampleCard.vue";
 import MaterialBadge from "../../../components/MaterialBadge.vue";
 
 //加载api
-import useNewsList from "../../../api/useNewsList";
+import useNewsList from "@/api/useNewsList";
 
 const { newList } = useNewsList();
 </script>
@@ -34,7 +34,7 @@ const { newList } = useNewsList();
               <ExampleCard
                 class="shadow-lg"
                 :title="news.attributes.title.slice(0, 30) + '...'"
-                image="http://8.222.140.62:1337/work2.png"
+                image="http://localhost:3000/public/work2.png"
                 route=""
               />
             </div>
@@ -42,10 +42,8 @@ const { newList } = useNewsList();
         </div>
         <div class="col-md-3 mx-auto mt-md-0 mt-3">
           <div class="position-sticky" style="top: 100px !important">
-            <h3>最新资讯显示块--title</h3>
-            <h6 class="text-secondary font-weight-normal">
-              最新资讯显示块--content
-            </h6>
+            <h3>实例</h3>
+            <h6 class="text-secondary font-weight-normal">实例</h6>
           </div>
         </div>
       </div>

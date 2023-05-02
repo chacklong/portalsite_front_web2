@@ -9,7 +9,6 @@ onMounted(async () => {
   try {
     const response = await getNewsDetail(route.params.id);
     newList.value = response.data;
-    console.log(newList.value);
   } catch (error) {
     console.error(error);
   }

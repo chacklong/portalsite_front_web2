@@ -10,7 +10,7 @@ const store = useAppStore();
 
 defineProps({
   route: {
-    type: String,
+    type: Object,
     required: true,
   },
   image: {
@@ -41,7 +41,7 @@ export default {
 };
 </script>
 <template>
-  <RouterLink :to="{ name: route }">
+  <div :to="{ name: route }">
     <div
       class="card move-on-hover"
       v-bind="$attrs"
@@ -94,5 +94,5 @@ export default {
         {{ subtitle }}
       </p>
     </div>
-  </RouterLink>
+  </div>
 </template>

@@ -1,4 +1,18 @@
 <script setup>
+import { onMounted, ref } from "vue";
+//加载api/news
+import { getNewsList } from "@/api/news";
+const newList = ref([]);
+//fetch news list on component mount
+onMounted(async () => {
+  try {
+    const response = await getNewsList();
+    newList.value[0] = response.data;
+    console.log(newList.value[0].attributes);
+  } catch (error) {
+    console.error(error);
+  }
+});
 defineProps({
   color: {
     text: String,
