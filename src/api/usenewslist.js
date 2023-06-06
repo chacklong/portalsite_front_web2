@@ -1,14 +1,14 @@
 import { onMounted, ref } from "vue";
-import { getNewsList } from "@/api/news";
+import { getNewsDefault } from "@/api/news";
 
 export default function useNewsList() {
   const newList = ref([]);
 
   onMounted(async () => {
     try {
-      const response = await getNewsList();
+      const response = await getNewsDefault();
       newList.value = response.data;
-      // console.log(newList.value[0].attributes);
+      // console.log(newList.value);
     } catch (error) {
       console.error(error);
     }

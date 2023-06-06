@@ -1,7 +1,7 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref, watch } from "vue";
-import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
+import { useWindowsWidth } from "@/assets/js/useWindowsWidth";
 
 // images
 import ArrDark from "@/assets/img/down-arrow-dark.svg";
@@ -135,7 +135,7 @@ watch(
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        科技有限公司
+      科技有限公司
       </RouterLink>
       <a
         href="/"

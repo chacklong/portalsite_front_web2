@@ -1,14 +1,13 @@
 <script setup>
 import { RouterLink } from "vue-router";
 import { ref, watch } from "vue";
-import { useWindowsWidth } from "../../assets/js/useWindowsWidth";
+import { useWindowsWidth } from "../../../../assets/js/useWindowsWidth";
 
 // images
 import ArrDark from "@/assets/img/down-arrow-dark.svg";
-// import downArrow from "@/assets/img/down-arrow.svg";
 import DownArrWhite from "@/assets/img/down-arrow-white.svg";
-// import MaterialBadge from "@/components/MaterialBadge.vue";
 
+// const centerDialogVisible = ref(false);
 const props = defineProps({
   action: {
     type: Object,
@@ -18,31 +17,30 @@ const props = defineProps({
     default: () => ({
       route: "/",
       color: "bg-gradient-success",
-      label: "dmeo",
-    })
+      label: "",
+    }),
   },
   transparent: {
     type: Boolean,
-    default: false
+    default: false,
   },
   light: {
     type: Boolean,
-    default: false
+    default: false,
   },
   dark: {
     type: Boolean,
-    default: false
+    default: false,
   },
   sticky: {
     type: Boolean,
-    default: false
+    default: false,
   },
   darkText: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
-
 // set arrow  color
 function getArrowColor() {
   if (props.transparent && textDark.value) {
@@ -90,6 +88,14 @@ watch(
   }
 );
 </script>
+<style>
+.dialog-footer button:first-child {
+  margin-right: 10px;
+}
+.custom-dialog-wrapper {
+  background-color: hsla(0, 0%, 100%, 0.973) !important; /* 设置透明度为 0.5 */
+}
+</style>
 <template>
   <nav
     class="navbar navbar-expand-lg top-0"
@@ -99,7 +105,7 @@ watch(
       'my-3 blur border-radius-lg z-index-3 py-2 shadow-none py-2 start-0 end-0 mx-4 position-absolute mt-4':
         props.sticky,
       'navbar-light bg-white py-3': props.light,
-      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
+      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark,
     }"
   >
     <div
@@ -113,15 +119,15 @@ watch(
         class="navbar-brand d-none d-md-block"
         :class="[
           (props.transparent && textDark.value) || !props.transparent
-            ? 'text-dark font-weight-bolder ms-sm-3'
-            : 'text-white font-weight-bolder ms-sm-3'
+            ? 'text-dark font-weight-bolder ms-sm-35'
+            : 'text-white font-weight-bolder ms-sm-35',
         ]"
-        :to="{ name: 'companyhome' }"
+        :to="{ name: 'technologycenter' }"
         rel="tooltip"
-        title="Designed and Coded by Creative Tim"
+        title="company name"
         data-placement="bottom"
       >
-        科技有限公司
+        技术服务中心
       </RouterLink>
       <RouterLink
         class="navbar-brand d-block d-md-none"
@@ -135,13 +141,8 @@ watch(
         title="Designed and Coded by Creative Tim"
         data-placement="bottom"
       >
-        科技有限公司
+        技术服务中心
       </RouterLink>
-      <a
-        href="/"
-        class="btn btn-sm bg-gradient-dark mb-0 ms-auto d-lg-none d-block"
-        >主页</a
-      >
       <button
         class="navbar-toggler shadow-none ms-2"
         type="button"
@@ -214,7 +215,7 @@ watch(
                         <span>联系我们</span>
                       </RouterLink>
                       <RouterLink
-                        :to="{ name: 'newscontent' }"
+                        :to="{ name: 'contactus' }"
                         class="dropdown-item border-radius-md"
                       >
                         <span>企业资讯</span>
@@ -253,7 +254,7 @@ watch(
                   <span>联系我们</span>
                 </RouterLink>
                 <RouterLink
-                  :to="{ name: 'newscontent' }"
+                  :to="{ name: 'contactus' }"
                   class="dropdown-item border-radius-md"
                 >
                   <span>企业资讯</span>
@@ -501,6 +502,32 @@ watch(
             >
           </li>
         </ul>
+        <!-- <el-dialog
+          v-model="centerDialogVisible"
+          title="联系我们"
+          width="50%"
+          align-center
+          class="custom-dialog-wrapper"
+        >
+          <span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br /><span>open the dialog from the center from the screen</span>
+          <br />
+          <template #footer>
+            <span class="dialog-footer">
+              <el-button @click="centerDialogVisible = true">取消</el-button>
+              <el-button @click="centerDialogVisible = false" type="primary"
+                >提交</el-button
+              >
+            </span>
+          </template>
+        </el-dialog> -->
       </div>
     </div>
   </nav>

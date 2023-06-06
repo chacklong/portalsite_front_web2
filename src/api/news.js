@@ -15,7 +15,7 @@ export function getNewsDetail(id) {
 }
 export function getNewsDefault() {
   return request({
-    url: "/news?populate=image",
+    url: `/news?populate=image`,
     method: "get",
   });
 }

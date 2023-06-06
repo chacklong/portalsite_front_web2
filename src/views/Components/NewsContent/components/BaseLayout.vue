@@ -16,7 +16,7 @@ defineProps({
 </script>
 <template>
   <DefaultNavbar
-    :action="{ color: 'bg-gradient-dark', label: '首页', route: '/' }"
+    :action="{ color: 'bg-gradient-dark', label: '首页', rotue: '/' }"
     light
   />
   <div class="container mt-5">

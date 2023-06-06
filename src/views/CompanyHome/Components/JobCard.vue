@@ -1,4 +1,5 @@
 <script setup>
+import jobbackground from "@/assets/img/1510511459019.jpg";
 defineProps({
   color: {
     text: String,
@@ -38,6 +39,10 @@ defineProps({
     type: String,
     required: true,
   },
+  keywords: {
+    type: String,
+    required: true,
+  },
   action: {
     type: Object,
     required: true,
@@ -58,6 +63,7 @@ defineProps({
   <div
     class="info-horizontal border-radius-xl d-block d-md-flex"
     :class="`${color.background ?? ''}`"
+    :style="`background-image: url(${jobbackground})`"
   >
     <i class="material-icons text-3xl" :class="`text-${icon.color}`">{{
       icon.component
@@ -66,6 +72,9 @@ defineProps({
       <h5 :class="`text-${color.text ?? ''}`">{{ title }}</h5>
       <p :class="`text-${color.text ?? ''}`">
         {{ description }}
+      </p>
+      <p :class="`text-${color.text ?? ''}`">
+        {{ keywords }}
       </p>
       <a
         :href="action.route"

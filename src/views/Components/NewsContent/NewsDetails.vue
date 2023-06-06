@@ -13,8 +13,8 @@ onMounted(async () => {
     console.error(error);
   }
 });
-import BaseLayout from "../../components/BaseLayout.vue";
-import View from "../../components/View.vue";
+import BaseLayout from "./components/BaseLayout.vue";
+import View from "./components/View.vue";
 
 //nav-pills
 import setNavPills from "@/assets/js/nav-pills";
@@ -28,8 +28,11 @@ onMounted(() => {
 <template>
   <BaseLayout
     :breadcrumb="[
-      { label: '企业资讯', route: '/' },
-      { label: '新闻列表', route: '/sections/navigation/pagination' },
+      { label: '企业资讯', route: '#' },
+      {
+        label: '新闻列表',
+        route: 'http://localhost:3000/corporateinformation/newscontent',
+      },
       { label: '新闻详情' },
     ]"
   >

@@ -12,9 +12,7 @@ const bgImage =
       class="navbar navbar-expand-lg navbar-dark navbar-absolute bg-transparent shadow-none"
     >
       <div class="container">
-        <a class="navbar-brand text-white" href="javascript:;"
-          >Material Design</a
-        >
+        <a class="navbar-brand text-white" href="javascript:;">科技有限公司</a>
         <button
           class="navbar-toggler"
           type="button"

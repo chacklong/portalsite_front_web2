@@ -1,5 +1,5 @@
 <script setup>
-import logoDark from "@/assets/img/login1.png";
+import logoDark from "@/assets/img/work.png";
 defineProps({
   brand: {
     type: Object,
